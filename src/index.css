@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-background: var(--theme-bg);
+  --color-foreground: var(--theme-fg);
+
+  --color-primary: var(--theme-primary);
+  --color-primary-foreground: var(--theme-primary-fg);
+
+  --color-accent: var(--theme-accent);
+  --color-accent-foreground: var(--theme-fg);
+
+  --color-selection: var(--theme-primary);
+  --color-border: var(--theme-border);
+
+  --radius: 0px;
+}
+
+:root {
+  /* Default B&W */
+  --theme-bg: #eeeeee;
+  --theme-fg: #000000;
+  --theme-primary: #000000;
+  --theme-primary-fg: #ffffff;
+  --theme-accent: #cccccc;
+  --theme-border: #000000;
+}
+
+.theme-matrix {
+  --theme-bg: #050505;
+  --theme-fg: #00ff41;
+  --theme-primary: #00ff41;
+  --theme-primary-fg: #050505;
+  --theme-accent: #008f11;
+  --theme-border: #00ff41;
+}
+
+.theme-amber {
+  --theme-bg: #1a1100;
+  --theme-fg: #ffb000;
+  --theme-primary: #ffb000;
+  --theme-primary-fg: #1a1100;
+  --theme-accent: #cc8800;
+  --theme-border: #ffb000;
+}
+
+.theme-cyber {
+  --theme-bg: #000022;
+  --theme-fg: #ff00ff;
+  --theme-primary: #00ffff;
+  --theme-primary-fg: #000022;
+  --theme-accent: #aa00aa;
+  --theme-border: #00ffff;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retro dot pattern background using theme variables */
+.dot-bg {
+  background-image: radial-gradient(var(--theme-border) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-pixel);
+  letter-spacing: -1px;
+}
+
+.brutalist-window {
+  border: 3px solid var(--theme-border);
+  box-shadow: 6px 6px 0px 0px var(--theme-border);
+  background-color: var(--theme-bg);
+}
+
+.brutalist-window-body {
+  background-color: var(--theme-bg);
+}
+
+.brutalist-button {
+  border: 2px solid var(--theme-border);
+  box-shadow: 3px 3px 0px 0px var(--theme-border);
+  transition: all 0.1s;
+}
+
+.brutalist-button:active {
+  box-shadow: 0px 0px 0px 0px var(--theme-border);
+  transform: translate(3px, 3px);
+}
+
+.pixel-art-filter {
+  filter: grayscale(100%) contrast(150%) brightness(1.1);
+  image-rendering: pixelated;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+  border-left: 3px solid var(--theme-border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-primary);
+  border: 2px solid var(--theme-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent);
+}
+
+/* CRT Scanlines Overlay */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 50;
+  position: fixed;
+  inset: 0;
+}
